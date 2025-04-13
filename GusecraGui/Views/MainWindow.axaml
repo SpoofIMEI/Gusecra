@@ -1,0 +1,106 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GusecraGui.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GusecraGui.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="GusecraGui"
+        MinWidth="800"
+        MinHeight="875"
+        CanResize="True">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="FontFamily" Value="{StaticResource NunitoFont}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="30,7"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="MaxHeight" Value="34"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Styles>
+
+    <Panel Classes="main">
+        <StackPanel Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="200*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" MinWidth="500">
+                    <DockPanel>
+                        <TextBlock Margin="0,5,0,0" FontSize="18">Callsign:</TextBlock>
+                        <TextBox Width="150" Margin="5,0,0,0" Text="{Binding Callsign, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Margin="5,5,0,0" FontSize="18">IP:</TextBlock>
+                        <TextBox Width="150" Margin="5,0,0,0" Text="{Binding Ip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Margin="5,5,0,0" FontSize="18">Port:</TextBlock>
+                        <NumericUpDown Margin="5,0,0,0" 
+                                       Text="{Binding Port, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                       Minimum="0" 
+                                       FormatString="0" 
+                                       Value="1"/>
+                        <Button Click="ConnectHandler" Margin="10,0" >CONNECT</Button>
+                    </DockPanel>
+
+                    <TextBlock Margin="0,5,0,10" 
+                               FontSize="18">Enter your message:</TextBlock>
+                    
+                    <TextBox Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             HorizontalAlignment="Stretch" 
+                             Height="150" 
+                             AcceptsReturn="True" TextWrapping="Wrap"/>
+                    <DockPanel HorizontalAlignment="Left" Margin="0,5">
+                        <Button Margin="0,0,5,0" Click="AttachHandler">ATTACH FILE</Button>
+                        <Button Width="225" Click="RemoveAttachHandler">REMOVE ATTACHMENT</Button>
+                    </DockPanel>
+
+                    <TextBlock Margin="0,0,0,5" Text="{Binding File}"></TextBlock>
+                    
+                    <DockPanel HorizontalAlignment="Stretch" Margin="0,5">
+                        <TextBlock Margin="0,4,0,0" FontSize="20">Encryption password:</TextBlock>
+                        <TextBox Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PasswordChar="•" Margin="5,0,0,0"/>
+                    </DockPanel>
+                    <Button Click="PasswordHandler">SET PASSWORD</Button>
+
+                    <DockPanel HorizontalAlignment="Left" Margin="0,20,0,5">
+                        <TextBlock Margin="0,5,0,0" FontSize="18">Message repeat:</TextBlock>
+                        <NumericUpDown Text="{Binding Repeat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                       Minimum="0" 
+                                       FormatString="0" 
+                                       Value="1" 
+                                       Margin="5,0,0,0"/>
+                    </DockPanel>
+                    <Button Click="SendHandler">SEND</Button>
+                </StackPanel>
+
+                <Border BorderThickness="2"
+                        CornerRadius="5"
+                        BorderBrush="#333333"
+                        Padding="5" 
+                        Grid.Column="1" 
+                        Grid.Row="1"
+                        Margin="0,20,0,0">
+                    <ScrollViewer Height="350">
+                        <StackPanel x:Name="output">
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Panel>
+
+</Window>

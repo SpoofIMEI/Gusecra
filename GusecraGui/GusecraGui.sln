@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GusecraGui", "GusecraGui.csproj", "{11F4FD0F-232F-FE6A-0B2A-7871FCE2145C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11F4FD0F-232F-FE6A-0B2A-7871FCE2145C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F4FD0F-232F-FE6A-0B2A-7871FCE2145C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F4FD0F-232F-FE6A-0B2A-7871FCE2145C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F4FD0F-232F-FE6A-0B2A-7871FCE2145C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC7FEE7A-AACD-4DE8-BC13-4A864C15E955}
+	EndGlobalSection
+EndGlobal
