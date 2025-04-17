@@ -4,8 +4,8 @@
 [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 [![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
 
-### Encrypted protocol/wrapper for fldigi with cross platform GUI.
-<img src="https://github.com/user-attachments/assets/b5ed217b-ab6e-4562-8c83-a4fd3760d310" width=575>
+### AES256-bit encrypted protocol/wrapper for fldigi with cross platform GUI.
+<img src="https://github.com/user-attachments/assets/b5ed217b-ab6e-4562-8c83-a4fd3760d310" width=600>
 
 
 ## Installation 
