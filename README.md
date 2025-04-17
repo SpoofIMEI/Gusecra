@@ -11,6 +11,7 @@
 ## Installation 
 1. Make sure you have dotnet installed `sudo apt install dotnet9` (or download dotnet9 as an installer for windows)
 2. Cd to GusecraGui and `dotnet run` or `dotnet build`
+
 I might add prebuilt binaries later
 
 ## Usage
